@@ -12,7 +12,7 @@
 
 #include "pushswap.h"
 
-// check is a number of the chuunk is in lst
+// check is a number of the chunk is in lst
 int	ft_check_nb(t_chunk mychunks, t_list *lst)
 {
 	int		i;

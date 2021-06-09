@@ -43,7 +43,7 @@ int	ft_nb_chunk(int narg, char **argv, t_list *stacka, int *nbstack)
 	int		ch;
 	t_list	*stackb;
 
-	j = 10;
+	j = ft_lstsize(stacka) / 10;
 	cmd = 1000000000;
 	cmdprev = 0 ;
 	ch = 0;

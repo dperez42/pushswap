@@ -78,7 +78,7 @@ OBJS_SWP 		= 	$(addprefix $(OBJS_DIR), $(OBJ_SWP))
 # FROM SUBJECT =============================================================================
 all: $(NAME_SWP)
 
-bonus: $(NAME_CHK)
+bonus: $(NAME_SWP) $(NAME_CHK)
 
 $(NAME_CHK): 	$(OBJS_CHK)
 				$(CC) $(FLAGS) $(INCLUDES_CHK) -o $(NAME_CHK) $(OBJS_CHK)
@@ -97,16 +97,5 @@ fclean: clean
 re: fclean all
 
 # testing ======================================================================================
-run100: all
-	@echo "$(GREEN)"
-	./$(NAME_SWP) $(ARGS100) | wc -l
-	@echo "$(PURPLE)"
-	./$(NAME_SWP) $(ARGS100) | ./checker_Mac $(ARGS100)
-	@echo "$(RESET)"
-run500: all
-	@echo "$(GREEN)"
-	./$(NAME_SWP) $(ARGS500) | wc -l
-	@echo "$(PURPLE)"
-	./$(NAME_SWP) $(ARGS500) | ./checker_Mac $(ARGS500)
-	@echo "$(RESET)"
+
 # ==========================================================================================

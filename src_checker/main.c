@@ -84,8 +84,6 @@ int	main(int narg, char **argv)
 	stacka = NULL;
 	stackb = NULL;
 	ft_check_all_args(narg, argv, &stacka);
-	if (!ft_check(stacka))
-		ft_exit_ok();
 	while (1)
 	{
 		line = get_next_line();
@@ -100,5 +98,6 @@ int	main(int narg, char **argv)
 		free(line);
 	}
 	ft_check_msg(stacka, stackb);
+	system(" leaks checker");
 	return (0);
 }

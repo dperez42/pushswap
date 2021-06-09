@@ -24,7 +24,7 @@ int	ft_check(t_list *lst)
 	return (0);
 }
 
-//Check is lst is inver short
+//Check is lst is inverse short
 int	ft_check_inv(t_list *lst)
 {
 	while (lst && lst->next != NULL)
@@ -36,6 +36,7 @@ int	ft_check_inv(t_list *lst)
 	return (0);
 }
 
+//load lst in an array
 int	*ft_load_stack_array(t_list *lst)
 {
 	int	i;
@@ -56,6 +57,7 @@ int	*ft_load_stack_array(t_list *lst)
 	return (dst);
 }
 
+//short an array
 int	*ft_short_array(int *src, int l)
 {
 	int	i;
@@ -83,6 +85,7 @@ int	*ft_short_array(int *src, int l)
 	return (src);
 }
 
+// check is stack1 is short and sstack2 is inverse short
 int	ft_check_both(t_list **stack1, t_list **stack2)
 {
 	t_list	*tmp1;

@@ -41,7 +41,7 @@ int	ft_choose_method2(t_moves tmp)
 	return (tmp.method);
 }
 
-//order chunks in stack A (- to +) y Stack B (+ to -)
+//Order chunks in stack A (- to +) y Stack B (+ to -)
 int	ft_order_stacks_0(t_list **stack1, t_list **stack2, t_chunk *mychunks,
 	int i)
 {
@@ -99,7 +99,7 @@ int	ft_order_stacks_1(t_list **stack1, t_list **stack2, t_chunk *mychunks,
 	return (0);
 }
 
-//order chunks in Stack B (+ to -) in first pass
+//Order chunks in Stack B (+ to -) in first pass
 int	ft_order_stack2_0(t_list **stack1, t_list **stack2, t_chunk *mychunks,
 	int i)
 {
@@ -123,7 +123,7 @@ int	ft_order_stack2_0(t_list **stack1, t_list **stack2, t_chunk *mychunks,
 	return (cmd);
 }
 
-//order chunks in Stack B (+ to -) in first pass
+//Order chunks in Stack B (+ to -) in first pass
 int	ft_order_stack2_1(t_list **stack1, t_list **stack2, t_chunk *mychunks,
 	int i)
 {

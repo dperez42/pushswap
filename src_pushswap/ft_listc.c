@@ -12,22 +12,6 @@
 
 #include "pushswap.h"
 
-int	ft_lstprint(t_list *lst)
-{
-	t_list	*list_ptr;
-	int		i;
-
-	i = 0;
-	list_ptr = lst;
-	while (list_ptr)
-	{
-		printf("%i \n", list_ptr->nb);
-		list_ptr = list_ptr->next;
-		i++;
-	}
-	return (i);
-}
-
 t_list	*ft_lstnew(int content)
 {
 	t_list	*new;
