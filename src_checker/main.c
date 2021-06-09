@@ -98,6 +98,5 @@ int	main(int narg, char **argv)
 		free(line);
 	}
 	ft_check_msg(stacka, stackb);
-	system(" leaks checker");
 	return (0);
 }

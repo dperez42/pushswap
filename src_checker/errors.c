@@ -15,7 +15,6 @@
 void	ft_exit_error(void)
 {
 	write (2, "Error\n", 6);
-	system(" leaks checker");
 	exit (1);
 }
 
@@ -56,6 +55,5 @@ int	ft_check_repeat(char **argv)
 void	ft_exit_ok(void)
 {
 	write(1, "OK\n", 3);
-	system(" leaks checker");
 	exit (0);
 }
