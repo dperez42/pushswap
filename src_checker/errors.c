@@ -18,11 +18,17 @@ void	ft_exit_error(void)
 	exit (1);
 }
 
-int	ft_check_arguments(char **argv)
+void	ft_exit_ok(void)
+{
+	write(1, "OK\n", 3);
+	exit (0);
+}
+
+int	ft_check_arguments(char **argv, int begin)
 {
 	int	i;
 
-	i = 1;
+	i = begin;
 	while (argv[i])
 	{
 		if (ft_is_integer(argv[i]))
@@ -32,12 +38,12 @@ int	ft_check_arguments(char **argv)
 	return (0);
 }
 
-int	ft_check_repeat(char **argv)
+int	ft_check_repeat(char **argv, int begin)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = begin;
 	while (argv[i])
 	{
 		j = 1;
@@ -50,10 +56,4 @@ int	ft_check_repeat(char **argv)
 		i ++;
 	}
 	return (0);
-}
-
-void	ft_exit_ok(void)
-{
-	write(1, "OK\n", 3);
-	exit (0);
 }

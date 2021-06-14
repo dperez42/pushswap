@@ -1,4 +1,16 @@
-#ifndef CHECKER_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daniel <daniel@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/14 09:32:35 by daniel            #+#    #+#             */
+/*   Updated: 2021/06/14 09:32:36 by daniel           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+# ifndef CHECKER_H
 # define	CHECKER_H
 
 # include <unistd.h>
@@ -31,8 +43,8 @@ int		ft_atoi(const char *str);
 char	*ft_strdup(char *str);
 char	*ft_strchr(char *str, char *c);
 int		ft_strcmp(char *char1, char *char2);
-int		ft_check_arguments(char **argv);
-int		ft_check_repeat(char **argv);
+int		ft_check_arguments(char **argv, int begin);
+int		ft_check_repeat(char **argv, int begin);
 char	*get_next_line(void);
 int		ft_atoi_int(const char *str);
 int		ft_isdigit(int c);
@@ -46,4 +58,6 @@ int		ft_commands(char *line, t_list **stackA, t_list **stackB);
 int		ft_check(t_list *lst);
 char	**ft_split(char const *s, char c);
 void	ft_exit_ok(void);
+int		ft_is_spc(char *str);
+void	ft_free_array(char **str);
 #endif

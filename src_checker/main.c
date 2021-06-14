@@ -43,20 +43,24 @@ void	ft_check_all_args(int narg, char **argv, t_list **stacka)
 	char	**str;
 	int		i;
 
-	if (narg == 1)
-		exit (0);
 	if (narg == 2)
 	{
+		if (ft_is_spc(argv[1]))
+			exit (0);
 		str = ft_split(argv[1], ' ');
-		if (ft_check_arguments(str) == 1 || ft_check_repeat(str) == 1)
+		if (ft_check_arguments(str, 0) == 1 || ft_check_repeat(str, 0) == 1)
+		{
+			ft_free_array(str);
 			ft_exit_error();
+		}
 		i = 0;
 		while (str[i] != 0)
 			i++;
 		ft_load(i, str, stacka, 0);
+		ft_free_array(str);
 		return ;
 	}
-	if (ft_check_arguments(argv) == 1 || ft_check_repeat(argv) == 1)
+	if (ft_check_arguments(argv, 1) == 1 || ft_check_repeat(argv, 1) == 1)
 		ft_exit_error();
 	ft_load(narg, argv, stacka, 1);
 	return ;
@@ -83,6 +87,8 @@ int	main(int narg, char **argv)
 
 	stacka = NULL;
 	stackb = NULL;
+	if (narg == 1)
+		exit (0);
 	ft_check_all_args(narg, argv, &stacka);
 	while (1)
 	{

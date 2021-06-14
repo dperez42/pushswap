@@ -35,11 +35,13 @@ void	ft_check_all_args(int narg, char **argv, t_list **stacka)
 	int		i;
 
 	if (narg == 1)
-		exit (0);
+		ft_exit_ok();
 	if (narg == 2)
 	{
+		if (ft_is_spc(argv[1]))
+			ft_exit_ok();
 		str = ft_split(argv[1], ' ');
-		if (ft_check_arguments(str) == 1 || ft_check_repeat(str) == 1)
+		if (ft_check_arguments(str, 0) == 1 || ft_check_repeat(str, 0) == 1)
 			ft_exit_error();
 		i = 0;
 		while (str[i] != 0)
@@ -48,7 +50,7 @@ void	ft_check_all_args(int narg, char **argv, t_list **stacka)
 		ft_free_array(str);
 		return ;
 	}
-	if (ft_check_arguments(argv) == 1 || ft_check_repeat(argv) == 1)
+	if (ft_check_arguments(argv, 1) == 1 || ft_check_repeat(argv, 1) == 1)
 		ft_exit_error();
 	ft_load(narg, argv, stacka, 1);
 	return ;
@@ -65,11 +67,11 @@ int	ft_check_msg(t_list *stacka, t_list *stackb)
 }
 
 // Check if arguments are numbers
-int	ft_check_arguments(char **argv)
+int	ft_check_arguments(char **argv, int begin)
 {
 	int	i;
 
-	i = 1;
+	i = begin;
 	while (argv[i])
 	{
 		if (ft_is_integer(argv[i]))
@@ -80,12 +82,12 @@ int	ft_check_arguments(char **argv)
 }
 
 // Check if arguments are repeated
-int	ft_check_repeat(char **argv)
+int	ft_check_repeat(char **argv, int begin)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = begin;
 	while (argv[i])
 	{
 		j = 1;

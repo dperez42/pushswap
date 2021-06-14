@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dperez-z <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: daniel <daniel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 10:40:24 by dperez-z          #+#    #+#             */
-/*   Updated: 2021/04/09 10:42:25 by dperez-z         ###   ########.fr       */
+/*   Updated: 2021/06/14 10:08:30 by daniel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,18 @@ void	ft_short_35(t_list *stack1, t_list *stack2)
 	int		*nbstack;
 
 	nb = ft_lstsize(stack1);
-	if (nb == 3)
+	if (nb <= 3)
 	{
 		ft_short_v3(&stack1, &stack2);
-		exit(0);
+		ft_exit_ok();
 	}
-	if (nb == 5)
+	if (nb <= 5)
 	{
 		nbstack = ft_load_stack_array(stack1);
 		nbstack = ft_short_array(nbstack, ft_lstsize(stack1));
-		nb = ft_lstsize(stack1);
 		ft_short_v5(&stack1, &stack2, nbstack);
 		free(nbstack);
-		exit (0);
+		ft_exit_ok();
 	}
 	return ;
 }
@@ -84,5 +83,6 @@ int	main(int narg, char **argv)
 	ft_check_all_args(narg, argv, &stacka);
 	ft_short_v2(&stacka, &stackb, 1, nbstack);
 	free(nbstack);
+	ft_exit_ok();
 	return (0);
 }

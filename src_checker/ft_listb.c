@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_listb.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dperez-z <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: daniel <daniel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 09:41:50 by dperez-z          #+#    #+#             */
-/*   Updated: 2021/04/13 10:21:27 by dperez-z         ###   ########.fr       */
+/*   Updated: 2021/06/14 09:53:47 by daniel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_reversyT(t_list **lst)
 	t_list	*last;
 	t_list	*prevlast;
 
-	if (!*lst)
+	if (!*lst || ft_lstsize(*lst) < 2)
 		return ;
 	last = *lst;
 	first = *lst;
@@ -70,7 +70,7 @@ void	ft_rotatyT(t_list **lst)
 	t_list	*last;
 	t_list	*second;
 
-	if (!*lst)
+	if (!*lst || ft_lstsize(*lst) < 2)
 		return ;
 	last = *lst;
 	if (!last->next)

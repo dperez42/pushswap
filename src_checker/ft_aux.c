@@ -43,7 +43,7 @@ int	ft_atoi_int(const char *str)
 
 int	ft_isdigit(int c)
 {
-	if ((c > 47 && c < 58) || c == '-' || c == '+')
+	if (c > 47 && c < 58)
 		return (0);
 	return (1);
 }
@@ -55,6 +55,8 @@ int	ft_is_integer(char *str)
 	int	flnb;
 
 	i = 0;
+	while (str[i] == '-' || str[i] == '+')
+		i++;
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]))
@@ -78,4 +80,19 @@ int	ft_strcmp(char *char1, char *char2)
 		i++;
 	}
 	return (0);
+}
+
+//check is only spaces
+int	ft_is_spc(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ')
+			return (0);
+		i ++;
+	}
+	return (1);
 }

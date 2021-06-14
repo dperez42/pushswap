@@ -80,6 +80,7 @@ int main(int argn, char **args)
     nb_max = ft_atoi_int(args[2]);
     m1 = malloc(sizeof(int)*nb_max);
     m2 = malloc(sizeof(int)*nb_max);
+    srand(getpid());
     int i;
     i = 0;
     while(i < nb_max)

@@ -61,8 +61,8 @@ void	ft_delete_list(t_list **lst);
 void	ft_load(int narg, char **argv, t_list **stacka, int begin);
 void	ft_check_all_args(int narg, char **argv, t_list **stacka);
 int		ft_check_msg(t_list *stacka, t_list *stackb);
-int		ft_check_arguments(char **argv);
-int		ft_check_repeat(char **argv);
+int		ft_check_arguments(char **argv, int begin);
+int		ft_check_repeat(char **argv, int begin);
 int		ft_check(t_list *lst);
 int		ft_check_inv(t_list *lst);
 int		*ft_load_stack_array(t_list *lst);
@@ -133,4 +133,5 @@ int		ft_order_stack2_0(t_list **stack1, t_list **stack2, t_chunk *mychunks,
 			int i);
 int		ft_order_stack2_1(t_list **stack1, t_list **stack2, t_chunk *mychunks,
 			int i);
+int		ft_is_spc(char *str);
 #endif
